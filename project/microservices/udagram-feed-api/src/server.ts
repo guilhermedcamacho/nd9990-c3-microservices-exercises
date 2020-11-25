@@ -14,7 +14,7 @@ import {V0_FEED_MODELS} from './controllers/v0/model.index';
   await sequelize.sync();
 
   const app = express();
-  const port = process.env.PORT || 8081;
+  const port = process.env.PORT || 8082;
 
   app.use(bodyParser.json());
 
@@ -38,6 +38,7 @@ import {V0_FEED_MODELS} from './controllers/v0/model.index';
 
   // Start the Server
   app.listen( port, () => {
+    console.log( `listening port ${port}` );
     console.log( `server running ${config.url}` );
     console.log( `press CTRL+C to stop server` );
   } );
